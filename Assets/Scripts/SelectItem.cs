@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class SelectItem : MonoBehaviour
 {
@@ -11,17 +10,15 @@ public class SelectItem : MonoBehaviour
   void Awake()
   {
     spriteRenderer = GetComponent<SpriteRenderer>();
-
-    spriteRenderer.sprite = currentSelected.GetComponentInChildren<SpriteRenderer>().sprite;
-    spriteRenderer.color = currentSelected.GetComponentInChildren<SpriteRenderer>().color;
-
-    currentSelected.GetComponent<Selection>().Select();
   }
 
   public void Swap(GameObject o)
   {
-    currentSelected.GetComponent<Selection>().Deselect();
+    if (currentSelected)
+    {
+      currentSelected.GetComponent<Selection>().Deselect();
 
+    }
     currentSelected = o;
 
     spriteRenderer.sprite = currentSelected.GetComponentInChildren<SpriteRenderer>().sprite;
