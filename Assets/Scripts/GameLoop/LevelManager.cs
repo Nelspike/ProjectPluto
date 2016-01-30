@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,7 +14,13 @@ public class LevelManager : MonoBehaviour
   [SerializeField]
   private GameObject title;
 
-  public GameObject CurrentLevelObject { get; private set; }
+  public Level CurrentLevel { get; private set; }
+
+  public HashSet<GameObject> LevelOutcomes
+  {
+    get { return CurrentLevel.PossibleOutcomes; }
+  } 
+
   private int currentLevel;
 
   // Use this for initialization
@@ -25,19 +32,20 @@ public class LevelManager : MonoBehaviour
 
   private void LoadNextLevel()
   {
-    CurrentLevelObject = Instantiate(levels[currentLevel]);
+    var LevelObject = Instantiate(levels[currentLevel]);
 
-    CurrentLevelObject.transform.SetParent(canvas.transform);
-    CurrentLevelObject.transform.SetAsLastSibling();
+    LevelObject.transform.SetParent(canvas.transform, false);
+    LevelObject.transform.SetAsLastSibling();
 
-    CurrentLevelObject.GetComponent<Level>().LoadLevel();
+    CurrentLevel = LevelObject.GetComponent<Level>();
+    CurrentLevel.LoadLevel();
   }
 
   public void CheckLevel()
   {
     title.SetActive(false);
 
-    Destroy(CurrentLevelObject);
+    Destroy(CurrentLevel.gameObject);
     currentLevel++;
 
     if (currentLevel < levels.Length)
@@ -50,4 +58,5 @@ public class LevelManager : MonoBehaviour
       // TODO: Load End Screen
     }
   }
+
 }

@@ -15,7 +15,7 @@ public class Summon : MonoBehaviour
   private Pedestal repurposedShell;
 
   [SerializeField]
-  private List<GameObject> outcomes;
+  private LevelManager levelManager;
 
   private GameObject _current;
 
@@ -28,7 +28,7 @@ public class Summon : MonoBehaviour
     };
     GameObject final = null;
 
-    foreach (var outcome in outcomes)
+    foreach (var outcome in levelManager.LevelOutcomes)
     {
       var ingredients = outcome.GetComponent<Outcome>().Item;
       if (currentItems.SetEquals(ingredients))

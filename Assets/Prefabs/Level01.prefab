@@ -521,6 +521,15 @@ MonoBehaviour:
   proposedOutcome: {fileID: 11419554}
   finalOutcome: {fileID: 11409476}
   inventory: {fileID: 145742}
+  possibleOutcomes:
+  - {fileID: 127422}
+  - {fileID: 166910}
+  - {fileID: 132912}
+  - {fileID: 108848}
+  - {fileID: 129178}
+  - {fileID: 184780}
+  - {fileID: 179146}
+  - {fileID: 190902}
 --- !u!114 &11426396
 MonoBehaviour:
   m_ObjectHideFlags: 1
