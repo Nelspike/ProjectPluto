@@ -3,7 +3,7 @@
 public class SelectItem : MonoBehaviour
 {
   [SerializeField]
-  private GameObject currentSelected;
+  public GameObject currentSelected { get; set; }
 
   private SpriteRenderer spriteRenderer;
 
