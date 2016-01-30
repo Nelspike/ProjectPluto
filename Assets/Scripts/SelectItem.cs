@@ -16,7 +16,7 @@ public class SelectItem : MonoBehaviour
   {
     if (currentSelected)
     {
-      currentSelected.GetComponent<Selection>().Deselect();
+      currentSelected.GetComponent<Interaction>().Enable();
 
     }
     currentSelected = o;
@@ -24,6 +24,6 @@ public class SelectItem : MonoBehaviour
     spriteRenderer.sprite = currentSelected.GetComponentInChildren<SpriteRenderer>().sprite;
     spriteRenderer.color = currentSelected.GetComponentInChildren<SpriteRenderer>().color;
 
-    currentSelected.GetComponent<Selection>().Select();
+    currentSelected.GetComponent<Interaction>().Disable();
   }
 }

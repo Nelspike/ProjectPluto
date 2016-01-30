@@ -1,51 +1,31 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.AccessControl;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 public class Summon : MonoBehaviour
 {
 
   [SerializeField]
-  private SelectItem rottenSurface;
+  private Pedestal rottenSurface;
 
   [SerializeField]
-  private SelectItem riggedSlurpable;
+  private Pedestal riggedSlurpable;
 
   [SerializeField]
-  private SelectItem repurposedShell;
+  private Pedestal repurposedShell;
 
   [SerializeField]
   private List<GameObject> outcomes;
 
-  [SerializeField]
-  private Transform spawnPoint;
+  private GameObject _current;
 
-  private HashSet<GameObject> currentItems;
-
-  void Awake()
+  public void Perform()
   {
-    currentItems = new HashSet<GameObject>() {
-      rottenSurface.currentSelected,
-      riggedSlurpable.currentSelected,
-      repurposedShell.currentSelected
-    }; 
-  }
-
-  void Update () {
-    if (!Input.GetMouseButtonDown(0)) return;
-
-    var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-    if (!hit.collider) return;
-    if (hit.collider.gameObject != gameObject) return;
-
-	  Mix();
-	}
-
-  private void Mix()
-  {
+    var currentItems = new HashSet<GameObject>() {
+      rottenSurface.CurrentSelected,
+      riggedSlurpable.CurrentSelected,
+      repurposedShell.CurrentSelected
+    };
     GameObject final = null;
 
     foreach (var outcome in outcomes)
@@ -57,9 +37,20 @@ public class Summon : MonoBehaviour
       }
     }
 
-    Assert.IsNotNull(final);
+    /* NOTE (goost) Or maybe this?
+    foreach (var outcome in from outcome in outcomes let ingredients = outcome.GetComponent<Outcome>().Item where currentItems.SetEquals(ingredients) select outcome)
+    {
+      final = outcome;
+    }
+    */
 
-    final.transform.position = spawnPoint.position;
+    Assert.IsNotNull(final);
     final.SetActive(true);
+    if (_current)
+    {
+      _current.SetActive(false);
+    }
+    _current = final;
+    //TODO (goost) Add MegaMan Wush Wush Outcome show stuffi thingy
   }
 }
