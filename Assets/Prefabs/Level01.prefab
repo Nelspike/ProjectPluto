@@ -47,6 +47,7 @@ GameObject:
   - 222: {fileID: 22263516}
   - 114: {fileID: 11483778}
   - 114: {fileID: 11414426}
+  - 95: {fileID: 9505348}
   m_Layer: 5
   m_Name: Goatpack
   m_TagString: Untagged
@@ -102,6 +103,7 @@ GameObject:
   - 222: {fileID: 22279430}
   - 114: {fileID: 11400778}
   - 114: {fileID: 11441776}
+  - 95: {fileID: 9545768}
   m_Layer: 5
   m_Name: BobOmb
   m_TagString: Untagged
@@ -140,6 +142,7 @@ GameObject:
   - 222: {fileID: 22267392}
   - 114: {fileID: 11473938}
   - 114: {fileID: 11433314}
+  - 95: {fileID: 9535824}
   m_Layer: 5
   m_Name: ProgrammerDuck
   m_TagString: Untagged
@@ -158,6 +161,7 @@ GameObject:
   - 222: {fileID: 22262644}
   - 114: {fileID: 11473644}
   - 114: {fileID: 11417352}
+  - 95: {fileID: 9579624}
   m_Layer: 5
   m_Name: SoggyElectroGoat
   m_TagString: Untagged
@@ -260,6 +264,7 @@ GameObject:
   - 222: {fileID: 22237494}
   - 114: {fileID: 11474718}
   - 114: {fileID: 11419554}
+  - 95: {fileID: 9575992}
   m_Layer: 5
   m_Name: JellyFish
   m_TagString: Untagged
@@ -298,6 +303,7 @@ GameObject:
   - 222: {fileID: 22221600}
   - 114: {fileID: 11414526}
   - 114: {fileID: 11446476}
+  - 95: {fileID: 9532940}
   m_Layer: 5
   m_Name: Cygoat
   m_TagString: Untagged
@@ -316,6 +322,7 @@ GameObject:
   - 222: {fileID: 22236026}
   - 114: {fileID: 11434832}
   - 114: {fileID: 11426396}
+  - 95: {fileID: 9555620}
   m_Layer: 5
   m_Name: BoxingKangaroo
   m_TagString: Untagged
@@ -354,6 +361,7 @@ GameObject:
   - 222: {fileID: 22289236}
   - 114: {fileID: 11462616}
   - 114: {fileID: 11409476}
+  - 95: {fileID: 9585800}
   m_Layer: 5
   m_Name: Diablo
   m_TagString: Untagged
@@ -361,6 +369,142 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!95 &9505348
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108848}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 9bdf6d875cf916445849456bc28ffb3f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9532940
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 592278bc23f46b54ca6c1f1ab91ff241, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9535824
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129178}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: d0121318e20491847be81031a937c186, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9545768
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127422}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: a5978e4536b32e84db3dc8169935e9b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9555620
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: d38d2463295d3a644af7d82d45971dbf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9575992
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: a74f1cc9d79a9d94da459246f26aeba1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9579624
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132912}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1ca604de8736e8b4996074fd9bf191b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9585800
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: cbc31c6d99363ec4caa04807fd898a7b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400778
 MonoBehaviour:
   m_ObjectHideFlags: 1
