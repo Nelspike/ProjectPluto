@@ -375,6 +375,7 @@ MonoBehaviour:
   _deityAnimator: {fileID: 267990404}
   _stageAnimator: {fileID: 527256769}
   _deityText: {fileID: 447449860}
+  hourglass: {fileID: 1174691551}
   _level: {fileID: 1393867407}
   _deityImage: {fileID: 947642818}
 --- !u!4 &234078837
@@ -3484,6 +3485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61301fa9e0eb0df4e8d39218f984cf41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pot: {fileID: 0}
+  _animation: {fileID: 0}
 --- !u!1 &1196237022
 GameObject:
   m_ObjectHideFlags: 0

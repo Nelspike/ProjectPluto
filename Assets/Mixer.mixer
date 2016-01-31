@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Mixer
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300001}
+  m_Snapshots:
+  - {fileID: 24500003}
+  m_StartSnapshot: {fileID: 24500003}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 7d5c5b2c9a01a5e408b7cc4b7bc3df68
+    - 9844d09ae6f905d47ae190a871519348
+    - 708366c82f1c4b34d90e64b3636a9ba8
+    - 12c579d020377d843bd12d8916d51ffe
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500003}
+--- !u!243 &24300001
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 7d5c5b2c9a01a5e408b7cc4b7bc3df68
+  m_Children:
+  - {fileID: 24309062}
+  - {fileID: 24326816}
+  - {fileID: 24349282}
+  m_Volume: d10d676090b5a154b9a80ed325f15566
+  m_Pitch: ed9cc1d07ea41ac43a35b77fe54b8d46
+  m_Effects:
+  - {fileID: 24400002}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &24309062
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SoundEffect
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 708366c82f1c4b34d90e64b3636a9ba8
+  m_Children: []
+  m_Volume: 703c0ea5c0f40f04c82f4131c5e5ef0f
+  m_Pitch: bc9e847fdcec9634797897455412b4fe
+  m_Effects:
+  - {fileID: 24471912}
+  - {fileID: 24446168}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &24326816
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Background
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9844d09ae6f905d47ae190a871519348
+  m_Children: []
+  m_Volume: 9263043ff72cc134c8c403d2e76f0335
+  m_Pitch: 598e5732d7e982b4d9f50c3347141a93
+  m_Effects:
+  - {fileID: 24450776}
+  - {fileID: 24498356}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &24349282
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Outcome
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 12c579d020377d843bd12d8916d51ffe
+  m_Children: []
+  m_Volume: d354cdde274f5ca4bb1193bbcf0926f8
+  m_Pitch: 1da33d23f505ec04c8cb0daedd95865e
+  m_Effects:
+  - {fileID: 24417202}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400002
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 435b0c8930c29374585e853b0ac15639
+  m_EffectName: Attenuation
+  m_MixLevel: f0f0aca1d8d457d419c5f24bd34a1bd0
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &24417202
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: f1e54df6418cca24c8a587e65970371f
+  m_EffectName: Attenuation
+  m_MixLevel: 86c6752e70f1cea4ba145bac46d75935
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &24446168
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 750417819e0ddbf46a530430a7467e7a
+  m_EffectName: Attenuation
+  m_MixLevel: 43b9b2cb53dd614409481067160127d6
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &24450776
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 7c223941f8e3b30468d12a11f4a16112
+  m_EffectName: Attenuation
+  m_MixLevel: 78c2497535244f54786340440048c614
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &24471912
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: a0ba435beb030ca44844f127e723f85a
+  m_EffectName: Send
+  m_MixLevel: ff4ebb4bd10072f4bb89973fd0bd1a81
+  m_Parameters: []
+  m_SendTarget: {fileID: 24498356}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &24498356
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 7c9b689984bcb8948b6ceeff0355b34a
+  m_EffectName: Duck Volume
+  m_MixLevel: 928fc835c39c06b499646d5df3fdf531
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: 6865f95f7e0867f47a0d3ca2510bb5c9
+  - m_ParameterName: Ratio
+    m_GUID: ae981ebdd30a8034f99de57e911e27f8
+  - m_ParameterName: Attack Time
+    m_GUID: f59fc5daebdc17e459b19ea5c32077b8
+  - m_ParameterName: Release Time
+    m_GUID: d638108645102dd4ab7b5dc1a4d4d6e1
+  - m_ParameterName: Make-up Gain
+    m_GUID: 63a5ed8cc05180f43a317065b3a0af4a
+  - m_ParameterName: Knee
+    m_GUID: e99e1df5f5d076a4cb9d758111024ad2
+  - m_ParameterName: Sidechain Mix
+    m_GUID: 25a71b09f922cfc4dbe1f229b6c786a6
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500003
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 2fff84ab9ab56cc4294a247e66b3b4a3
+  m_FloatValues:
+    703c0ea5c0f40f04c82f4131c5e5ef0f: 0.27000841
+    e99e1df5f5d076a4cb9d758111024ad2: 11
+    d638108645102dd4ab7b5dc1a4d4d6e1: 0.1
+    f59fc5daebdc17e459b19ea5c32077b8: 0.1
+    63a5ed8cc05180f43a317065b3a0af4a: -11.5
+    ae981ebdd30a8034f99de57e911e27f8: 2
+    d354cdde274f5ca4bb1193bbcf0926f8: -4.5603485
+    9263043ff72cc134c8c403d2e76f0335: -0.43201196
+    6865f95f7e0867f47a0d3ca2510bb5c9: -14.200001
+  m_TransitionOverrides: {}

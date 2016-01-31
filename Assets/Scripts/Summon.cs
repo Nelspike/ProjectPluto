@@ -37,8 +37,15 @@ public class Summon : MonoBehaviour
   [SerializeField]
   private GameObject _animatedPot;
 
+  [SerializeField]
+  private AudioSource _fakeOutcome;
+
+  [SerializeField]
+  private AudioSource _curtainSound;
+
   public void Perform()
   {
+    GetComponent<AudioSource>().Play();
     StartCoroutine(PerformRoutine());
   }
   private IEnumerator PerformRoutine()
@@ -81,10 +88,21 @@ public class Summon : MonoBehaviour
     //TODO (goost) Add MegaMan Wush Wush Outcome show stuffi thingy
     slide.SetBool(slideInHash, true);
 
+    fakeOutcome.GetComponent<AudioSource>().clip = final.GetComponent<Outcome>().Clip;
     fakeOutcome.GetComponent<Image>().sprite = final.GetComponent<Image>().sprite;
     fakeOutcome.GetComponent<Animator>().runtimeAnimatorController = final.GetComponent<Animator>().runtimeAnimatorController;
     _nameText.text = final.GetComponent<Outcome>().GloriousName;
     levelManager.SetOutcome(final);
+    StartCoroutine(PlaySound());
+
+  }
+
+  IEnumerator PlaySound()
+  {
+    yield return new WaitForSeconds(1.2f);
+    _fakeOutcome.Play();
+    _curtainSound.Play();
+
   }
 
   void DeactivatePot()

@@ -46,6 +46,11 @@ public class LevelManager : MonoBehaviour
   [SerializeField]
   private Heart[] hearts;
 
+  [SerializeField]
+  private AudioClip _deityAngry;
+  [SerializeField]
+  private AudioClip _deityHappy;
+
   private int brokenHearts = 0;
 
   private GameObject outcome;
@@ -67,7 +72,15 @@ public class LevelManager : MonoBehaviour
   [SerializeField]
   private Image _deityImage;
 
-  private float initTimer = 10f;
+  private float initTimer = 35f;
+  [SerializeField]
+  private AudioSource _source;
+  [SerializeField]
+  private AudioClip _correctOutcome;
+  [SerializeField]
+  private AudioClip _wrongOutcome;
+  [SerializeField]
+  private AudioSource _outcomeSource;
 
   // Use this for initialization
   void Start()
@@ -77,28 +90,34 @@ public class LevelManager : MonoBehaviour
     hourglass.SetTimerLength(initTimer);
     canKill = false;
     successCount = 0;
+    _source = GetComponent<AudioSource>();
   }
 
   public void CheckLevel()
   {
+
     Sprite choose;
     title.SetActive(false);
     if (outcome == Level.FinalOutcome)
     {
       Level.LoadLevel();
-      Invoke("ChangeToGoodDeity", 1f);
+      Invoke("ChangeToGoodDeity", 0.5f);
       _deityText.text = "...actually, nevermind!";
       canKill = false;
       successCount++;
+      _source.PlayOneShot(_deityHappy);
+      _outcomeSource.PlayOneShot(_correctOutcome);
     }
     else
     {
+
+      //_outcomeSource.PlayOneShot(_wrongOutcome);
       Level.Inventory.SetActive(true);
       _deityText.text = Level.FinalOutcome.GetComponent<Outcome>().Hint;
 
       if (canKill)
       {
-        for (var i = hearts.Length-1; i >= 0; i--)
+        for (var i = hearts.Length - 1; i >= 0; i--)
         {
           var heart = hearts[i];
           if (heart.isAlive)
@@ -111,18 +130,22 @@ public class LevelManager : MonoBehaviour
 
         if (brokenHearts == hearts.Length)
         {
-          _endDeityText.text = "You pleased me {0} times!".F(successCount);
+          _endDeityText.text = "You pleased me {0} time(s)!".F(successCount);
           _endDeity.SetActive(true);
           StartCoroutine(ReloadScene());
-        }      
+        }
+        else
+        {
+          _source.PlayOneShot(_deityAngry);
+        }
+
       }
 
-      canKill = true;
     }
 
     _deityImage.sprite = _badDeity;
     _stageAnimator.SetBool("SlideIn", false);
-
+    canKill = true;
     StartCoroutine(Reset());
   }
 

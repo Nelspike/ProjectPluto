@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Hourglass : MonoBehaviour
 {
   private readonly int _runningHash = Animator.StringToHash("Running");
+  private readonly int _multiplierHash = Animator.StringToHash("SpeedMultiplier");
 
   [SerializeField]
   private Summon pot;
@@ -36,20 +37,8 @@ public class Hourglass : MonoBehaviour
 
   public void SetTimerLength(float _seconds)
   {
-    /*print(_animator.speed);
-    print(_animation.length);
-    print(_seconds);
-    print("");*/
+    _animator.SetFloat(_multiplierHash, 20f / _seconds);
 
-    _animator.speed = _animation.length/_seconds;
-
-    /*print(_animator.speed);
-    print(_animation.length);
-    print(_seconds);
-    print("");*/
-
-    //_animator.GetNextAnimatorStateInfo(0).speed = 20f/_seconds;
-    //_animator.speed = 20f/_seconds;
   }
 
 }
