@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -31,12 +32,25 @@ public class LevelManager : MonoBehaviour
   private Text _deityText;
 
   [SerializeField]
+  private GameObject _endDeity;
+
+  [SerializeField]
+  private Text _endDeityText;
+
+  [SerializeField]
   private Hourglass hourglass;
 
   [SerializeField]
   private Level _level;
 
+  [SerializeField]
+  private Heart[] hearts;
+
+  private int brokenHearts = 0;
+
   private GameObject outcome;
+  private bool canKill;
+  private int successCount;
 
   public Level Level { get; private set; }
 
@@ -61,6 +75,8 @@ public class LevelManager : MonoBehaviour
     Level = _level;
     Level.LoadFirstLevel();
     hourglass.SetTimerLength(initTimer);
+    canKill = false;
+    successCount = 0;
   }
 
   public void CheckLevel()
@@ -72,12 +88,38 @@ public class LevelManager : MonoBehaviour
       Level.LoadLevel();
       Invoke("ChangeToGoodDeity", 1f);
       _deityText.text = "...actually, nevermind!";
+      canKill = false;
+      successCount++;
     }
     else
     {
       Level.Inventory.SetActive(true);
       _deityText.text = Level.FinalOutcome.GetComponent<Outcome>().Hint;
+
+      if (canKill)
+      {
+        for (var i = hearts.Length-1; i >= 0; i--)
+        {
+          var heart = hearts[i];
+          if (heart.isAlive)
+          {
+            heart.killHeart();
+            brokenHearts++;
+            break;
+          }
+        }
+
+        if (brokenHearts == hearts.Length)
+        {
+          _endDeityText.text = "You pleased me {0} times!".F(successCount);
+          _endDeity.SetActive(true);
+          StartCoroutine(ReloadScene());
+        }      
+      }
+
+      canKill = true;
     }
+
     _deityImage.sprite = _badDeity;
     _stageAnimator.SetBool("SlideIn", false);
 
@@ -107,8 +149,19 @@ public class LevelManager : MonoBehaviour
     _deityAnimator.SetTrigger(returnHash);
     _stageAnimator.SetTrigger(returnHash);
 
+    foreach (var heart in hearts)
+    {
+      heart.gameObject.SetActive(true);
+    }
+
     initTimer -= 5f;
     hourglass.SetTimerLength(initTimer);
     hourglass.StartTimer();
+  }
+
+  public IEnumerator ReloadScene()
+  {
+    yield return new WaitForSeconds(5f);
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
 }

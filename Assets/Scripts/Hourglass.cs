@@ -36,17 +36,17 @@ public class Hourglass : MonoBehaviour
 
   public void SetTimerLength(float _seconds)
   {
-    print(_animator.speed);
+    /*print(_animator.speed);
     print(_animation.length);
     print(_seconds);
-    print("");
+    print("");*/
 
     _animator.speed = _animation.length/_seconds;
 
-    print(_animator.speed);
+    /*print(_animator.speed);
     print(_animation.length);
     print(_seconds);
-    print("");
+    print("");*/
 
     //_animator.GetNextAnimatorStateInfo(0).speed = 20f/_seconds;
     //_animator.speed = 20f/_seconds;

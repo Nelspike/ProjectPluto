@@ -85,8 +85,6 @@ public class Summon : MonoBehaviour
     fakeOutcome.GetComponent<Animator>().runtimeAnimatorController = final.GetComponent<Animator>().runtimeAnimatorController;
     _nameText.text = final.GetComponent<Outcome>().GloriousName;
     levelManager.SetOutcome(final);
-
-
   }
 
   void DeactivatePot()
