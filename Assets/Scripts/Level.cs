@@ -19,6 +19,9 @@ public class Level : MonoBehaviour
   [SerializeField]
   private GameObject[] possibleOutcomes;
 
+  public GameObject FinalOutcome { get { return finalOutcome.gameObject; } }
+  public GameObject Inventory { get { return inventory; } }
+
   public HashSet<GameObject> PossibleOutcomes
   {
     get { return new HashSet<GameObject>(possibleOutcomes); }

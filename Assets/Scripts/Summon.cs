@@ -9,8 +9,7 @@ public class Summon : MonoBehaviour
 {
 
   private readonly int slideInHash = Animator.StringToHash("SlideIn");
-  private readonly int deityInHash = Animator.StringToHash("DeityIn");
-  private readonly int returnHash = Animator.StringToHash("Return");
+  private readonly int playHash = Animator.StringToHash("Play");
 
   [SerializeField]
   private Pedestal rottenSurface;
@@ -61,7 +60,7 @@ public class Summon : MonoBehaviour
     */
 
     Assert.IsNotNull(final);
-    final.SetActive(true);
+   
     if (_current)
     {
       _current.SetActive(false);
@@ -73,6 +72,8 @@ public class Summon : MonoBehaviour
 
     fakeOutcome.GetComponent<Image>().sprite = final.GetComponent<Image>().sprite;
     fakeOutcome.GetComponent<Animator>().runtimeAnimatorController = final.GetComponent<Animator>().runtimeAnimatorController;
-    fakeOutcome.GetComponent<Animator>().SetTrigger("Play");
+    fakeOutcome.GetComponent<Animator>().SetTrigger(playHash);
+
+    levelManager.SetOutcome(final);
   }
 }
