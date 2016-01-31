@@ -166,7 +166,7 @@ public class LevelManager : MonoBehaviour
     yield return new WaitForSeconds(2f);
     _deityImage.sprite = _badDeity;
     _deityText.text = Level.FinalOutcome.GetComponent<Outcome>().Hint;
-    yield return new WaitForSeconds(2f);
+    yield return new WaitForSeconds(3.5f);
     _deityAnimator.SetBool(deityInHash, false);
     yield return new WaitForSeconds(_deityAnimator.GetCurrentAnimatorStateInfo(0).length);
     _deityAnimator.SetTrigger(returnHash);
