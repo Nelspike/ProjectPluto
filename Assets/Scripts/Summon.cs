@@ -43,6 +43,7 @@ public class Summon : MonoBehaviour
   }
   private IEnumerator PerformRoutine()
   {
+    levelManager.Hourglass.StopTimer();
     _animatedPot.SetActive(true);
     yield return new WaitForSeconds(1f);
     Invoke("DeactivatePot", 1f);
@@ -84,6 +85,8 @@ public class Summon : MonoBehaviour
     fakeOutcome.GetComponent<Animator>().runtimeAnimatorController = final.GetComponent<Animator>().runtimeAnimatorController;
     _nameText.text = final.GetComponent<Outcome>().GloriousName;
     levelManager.SetOutcome(final);
+
+
   }
 
   void DeactivatePot()

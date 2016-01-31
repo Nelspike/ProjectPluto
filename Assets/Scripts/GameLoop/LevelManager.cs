@@ -15,7 +15,6 @@ public class LevelManager : MonoBehaviour
   [SerializeField]
   private Sprite _badDeity;
 
-
   [SerializeField]
   private GameObject canvas;
 
@@ -24,11 +23,15 @@ public class LevelManager : MonoBehaviour
 
   [SerializeField]
   private Animator _deityAnimator;
+
   [SerializeField]
   private Animator _stageAnimator;
 
   [SerializeField]
   private Text _deityText;
+
+  [SerializeField]
+  private Hourglass hourglass;
 
   [SerializeField]
   private Level _level;
@@ -42,14 +45,22 @@ public class LevelManager : MonoBehaviour
     get { return Level.PossibleOutcomes; }
   }
 
+  public Hourglass Hourglass
+  {
+    get { return hourglass; }
+  }
+
   [SerializeField]
   private Image _deityImage;
+
+  private float initTimer = 10f;
 
   // Use this for initialization
   void Start()
   {
     Level = _level;
     Level.LoadFirstLevel();
+    hourglass.SetTimerLength(initTimer);
   }
 
   public void CheckLevel()
@@ -92,8 +103,12 @@ public class LevelManager : MonoBehaviour
     _deityText.text = Level.FinalOutcome.GetComponent<Outcome>().Hint;
     yield return new WaitForSeconds(2f);
     _deityAnimator.SetBool(deityInHash, false);
-    yield return new WaitForSeconds(1.2f);
+    yield return new WaitForSeconds(_deityAnimator.GetCurrentAnimatorStateInfo(0).length);
     _deityAnimator.SetTrigger(returnHash);
     _stageAnimator.SetTrigger(returnHash);
+
+    initTimer -= 5f;
+    hourglass.SetTimerLength(initTimer);
+    hourglass.StartTimer();
   }
 }
