@@ -427,7 +427,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127422}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 22100000, guid: a5978e4536b32e84db3dc8169935e9b7, type: 2}
   m_CullingMode: 0
@@ -478,7 +478,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 22100000, guid: 1ca604de8736e8b4996074fd9bf191b5, type: 2}
   m_CullingMode: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d8be0d5a012596e4ea73a08994e69c0b, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 299b304d51278c54a9690c92f198019c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -574,6 +574,8 @@ MonoBehaviour:
   - {fileID: 117650}
   - {fileID: 185324}
   - {fileID: 128316}
+  _hint: '...a fast and fierce demon. Blood required?'
+  _goriousName: Diablo
 --- !u!114 &11409920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -624,6 +626,8 @@ MonoBehaviour:
   - {fileID: 117650}
   - {fileID: 102766}
   - {fileID: 128316}
+  _hint: '...an upgraded animal. I dunno just slap on a jetpack or something.'
+  _goriousName: Goatpack
 --- !u!114 &11414526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,6 +670,8 @@ MonoBehaviour:
   - {fileID: 117650}
   - {fileID: 102766}
   - {fileID: 170230}
+  _hint: '...a sticky mess. Satanic touch would be nice.'
+  _goriousName: Soggy Electro Goat
 --- !u!114 &11419554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -681,6 +687,8 @@ MonoBehaviour:
   - {fileID: 144420}
   - {fileID: 102766}
   - {fileID: 170230}
+  _hint: '...a squishy being. Shocking!'
+  _goriousName: Jelly Fish
 --- !u!114 &11420020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -731,6 +739,8 @@ MonoBehaviour:
   - {fileID: 144420}
   - {fileID: 185324}
   - {fileID: 128316}
+  _hint: '...a bouncy creature, bursting with energy.'
+  _goriousName: Boxing Kangaroo
 --- !u!114 &11426494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -822,6 +832,8 @@ MonoBehaviour:
   - {fileID: 144420}
   - {fileID: 185324}
   - {fileID: 170230}
+  _hint: '...something efficient with technology. Should enjoy baths.'
+  _goriousName: Programmer Duck
 --- !u!114 &11434832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -866,7 +878,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -875,9 +887,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: e6d7aca9216546245829c885f6ed949c,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c6f91714c6da27743a328a7cf1f2a249, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 5e9a73400a38acb44aea9707e062f4ac, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -888,12 +901,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11496180}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: Swape
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 128316}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -943,6 +956,8 @@ MonoBehaviour:
   - {fileID: 144420}
   - {fileID: 102766}
   - {fileID: 128316}
+  _hint: '...a traveller with some danger attached.'
+  _goriousName: BobOmb
 --- !u!114 &11446476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -958,6 +973,8 @@ MonoBehaviour:
   - {fileID: 117650}
   - {fileID: 185324}
   - {fileID: 170230}
+  _hint: '...animal experiments in sleepless nights.'
+  _goriousName: Cygoat
 --- !u!114 &11447470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -975,7 +992,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0.2352941, b: 0.2352941, a: 1}
@@ -984,9 +1001,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 2bcc9e275be209f42b6bbf11ddbf2680,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f2e71de2c9387584b8b5c312b8a58931, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: d3a430b2314dbd54480f2c609370d0e9, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -997,12 +1015,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11414114}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: Swape
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 185324}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1027,7 +1045,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1036,9 +1054,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 9803f8dd0862f9c4194993a61e1d0d51,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 8a714f25433d23740ab60185e7fd6f19, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 23ea876bc29710c43b3357372fdd371c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1049,12 +1068,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11420020}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: Swape
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 170230}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1106,7 +1125,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 0.2352941, b: 0.2352941, a: 1}
@@ -1115,9 +1134,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: dadac529e727dee429a5e5bd3624fd4f,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 283e95a34af487e409636d4b0a9803c2, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: d566fd88b81c12c45bf536563fe8ecdc, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1128,12 +1148,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11410918}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: Swape
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 102766}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1312,7 +1332,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1321,9 +1341,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: ca7f7f420e8c78e41aceaa149035c1ec,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 6658f59a474ce4d42b0931fae7c919a5, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 47a33de8d8cd9014fb7886dd45cdec09, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1334,12 +1355,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11474622}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: Swape
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 144420}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1429,7 +1450,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.47794116, g: 1, b: 0.80557805, a: 1}
@@ -1438,9 +1459,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 49340749ba585d94a8cd6cac9f3f4ec9,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 283e95a34af487e409636d4b0a9803c2, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: e8e4a0a6631198a4fbba24c50d9b2546, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1451,12 +1473,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11477538}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: Swape
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 117650}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

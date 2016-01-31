@@ -1,7 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Permissions;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Level : MonoBehaviour
@@ -25,15 +23,30 @@ public class Level : MonoBehaviour
   public HashSet<GameObject> PossibleOutcomes
   {
     get { return new HashSet<GameObject>(possibleOutcomes); }
-  } 
+  }
+
+  void Awake()
+  {
+    finalOutcome = possibleOutcomes[Random.Range(0, possibleOutcomes.Length)].GetComponent<Outcome>();
+  }
 
   public void LoadLevel()
   {
-    inventory.SetActive(false);
+    proposedOutcome = finalOutcome;
+    while (proposedOutcome == finalOutcome)
+    {
+      finalOutcome = possibleOutcomes[Random.Range(0, possibleOutcomes.Length)].GetComponent<Outcome>();
+    }
 
     foreach (var item in proposedOutcome.Item)
     {
       item.GetComponent<Button>().onClick.Invoke();
     }
+  }
+
+  public void LoadFirstLevel()
+  {
+    inventory.SetActive(false);
+    LoadLevel();
   }
 }

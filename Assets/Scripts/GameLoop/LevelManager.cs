@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -14,8 +14,7 @@ public class LevelManager : MonoBehaviour
 
   [SerializeField]
   private Sprite _badDeity;
-  [SerializeField]
-  private GameObject[] levels;
+
 
   [SerializeField]
   private GameObject canvas;
@@ -23,70 +22,60 @@ public class LevelManager : MonoBehaviour
   [SerializeField]
   private GameObject title;
 
-  [SerializeField] private Animator _deityAnimator;
+  [SerializeField]
+  private Animator _deityAnimator;
   [SerializeField]
   private Animator _stageAnimator;
 
+  [SerializeField]
+  private Text _deityText;
+
+  [SerializeField]
+  private Level _level;
+
   private GameObject outcome;
 
-  public Level CurrentLevel { get; private set; }
+  public Level Level { get; private set; }
 
   public HashSet<GameObject> LevelOutcomes
   {
-    get { return CurrentLevel.PossibleOutcomes; }
-  } 
+    get { return Level.PossibleOutcomes; }
+  }
 
-  private int currentLevel;
   [SerializeField]
   private Image _deityImage;
 
   // Use this for initialization
   void Start()
   {
-    currentLevel = 0;
-    LoadNextLevel();
-  }
-
-  private void LoadNextLevel()
-  {
-    var LevelObject = Instantiate(levels[currentLevel]);
-
-    LevelObject.transform.SetParent(canvas.transform, false);
-    LevelObject.transform.SetAsLastSibling();
-
-    CurrentLevel = LevelObject.GetComponent<Level>();
-    CurrentLevel.LoadLevel();
+    Level = _level;
+    Level.LoadFirstLevel();
   }
 
   public void CheckLevel()
   {
     Sprite choose;
     title.SetActive(false);
-    if (outcome == CurrentLevel.FinalOutcome)
+    if (outcome == Level.FinalOutcome)
     {
-      Destroy(CurrentLevel.gameObject);
-      currentLevel++;
-
-      if (currentLevel < levels.Length)
-      {
-        LoadNextLevel();
-      }
-      else
-      {
-        print("Derp");
-        // TODO: Load End Screen
-      }
-      choose = _goodDeity;
+      Level.LoadLevel();
+      Invoke("ChangeToGoodDeity", 1f);
+      _deityText.text = "...actually, nevermind!";
     }
     else
     {
-      choose = _badDeity;
-      CurrentLevel.Inventory.SetActive(true);
+      Level.Inventory.SetActive(true);
+      _deityText.text = Level.FinalOutcome.GetComponent<Outcome>().Hint;
     }
-    _deityImage.sprite = choose;
+    _deityImage.sprite = _badDeity;
     _stageAnimator.SetBool("SlideIn", false);
-   
+
     StartCoroutine(Reset());
+  }
+
+  private void ChangeToGoodDeity()
+  {
+    _deityImage.sprite = _goodDeity;
   }
 
   public void SetOutcome(GameObject final)
@@ -98,9 +87,10 @@ public class LevelManager : MonoBehaviour
   {
     yield return new WaitForSeconds(1.2f);
     _deityAnimator.SetBool(deityInHash, true);
-    print("im am her before  5");
-    yield return new WaitForSeconds(5f);
-    print("im am her before  1.2 222");
+    yield return new WaitForSeconds(2f);
+    _deityImage.sprite = _badDeity;
+    _deityText.text = Level.FinalOutcome.GetComponent<Outcome>().Hint;
+    yield return new WaitForSeconds(2f);
     _deityAnimator.SetBool(deityInHash, false);
     yield return new WaitForSeconds(1.2f);
     _deityAnimator.SetTrigger(returnHash);

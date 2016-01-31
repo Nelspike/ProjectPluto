@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -9,7 +8,6 @@ public class Summon : MonoBehaviour
 {
 
   private readonly int slideInHash = Animator.StringToHash("SlideIn");
-  private readonly int playHash = Animator.StringToHash("Play");
 
   [SerializeField]
   private Pedestal rottenSurface;
@@ -33,9 +31,21 @@ public class Summon : MonoBehaviour
   private GameObject fakeOutcome;
 
   private GameObject _current;
+  [SerializeField]
+  private Text _nameText;
+
+  [SerializeField]
+  private GameObject _animatedPot;
 
   public void Perform()
   {
+    StartCoroutine(PerformRoutine());
+  }
+  private IEnumerator PerformRoutine()
+  {
+    _animatedPot.SetActive(true);
+    yield return new WaitForSeconds(1f);
+    Invoke("DeactivatePot", 1f);
     var currentItems = new HashSet<GameObject>() {
       rottenSurface.CurrentSelected,
       riggedSlurpable.CurrentSelected,
@@ -60,7 +70,7 @@ public class Summon : MonoBehaviour
     */
 
     Assert.IsNotNull(final);
-   
+
     if (_current)
     {
       _current.SetActive(false);
@@ -72,8 +82,12 @@ public class Summon : MonoBehaviour
 
     fakeOutcome.GetComponent<Image>().sprite = final.GetComponent<Image>().sprite;
     fakeOutcome.GetComponent<Animator>().runtimeAnimatorController = final.GetComponent<Animator>().runtimeAnimatorController;
-    fakeOutcome.GetComponent<Animator>().SetTrigger(playHash);
-
+    _nameText.text = final.GetComponent<Outcome>().GloriousName;
     levelManager.SetOutcome(final);
+  }
+
+  void DeactivatePot()
+  {
+    _animatedPot.SetActive(false);
   }
 }

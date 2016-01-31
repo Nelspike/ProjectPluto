@@ -1,12 +1,20 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Outcome : MonoBehaviour
 {
 
   [SerializeField]
   private GameObject[] items;
+
+  [SerializeField]
+  private string _hint;
+
+  [SerializeField]
+  private string _goriousName;
+
+  public string GloriousName { get { return _goriousName; } }
+  public string Hint { get { return _hint; } }
 
   public HashSet<GameObject> Item
   {
