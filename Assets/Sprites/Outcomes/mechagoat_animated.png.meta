@@ -30,7 +30,7 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -79,11 +79,6 @@ TextureImporter:
         - {x: -2, y: -31}
         - {x: -2, y: -28}
         - {x: -2, y: -31}
-      - - {x: -23, y: -1}
-        - {x: -20, y: 0}
-        - {x: -20, y: 3}
-        - {x: -23, y: 4}
-        - {x: -25, y: 2}
     - name: mechagoat_animated_1
       rect:
         serializedVersion: 2
@@ -100,10 +95,14 @@ TextureImporter:
         - {x: 28, y: -11}
         - {x: 28, y: 14}
         - {x: 17, y: 32}
-        - {x: -30, y: 32}
-        - {x: -32, y: 29}
-        - {x: -32, y: -23}
-        - {x: -17, y: -32}
+        - {x: -14, y: 32}
+        - {x: -19, y: 18}
+        - {x: -13, y: 5}
+        - {x: -10, y: 0}
+        - {x: -30, y: 2}
+        - {x: -32, y: 0}
+        - {x: -32, y: -14}
+        - {x: -11, y: -32}
         - {x: -3, y: -32}
         - {x: -2, y: -31}
         - {x: -2, y: -28}
@@ -126,10 +125,9 @@ TextureImporter:
         - {x: 28, y: -4}
         - {x: 28, y: 32}
         - {x: -14, y: 32}
-        - {x: -29, y: 17}
-        - {x: -32, y: 11}
-        - {x: -32, y: -17}
-        - {x: -11, y: -32}
+        - {x: -32, y: 9}
+        - {x: -32, y: -11}
+        - {x: -13, y: -32}
         - {x: -3, y: -32}
         - {x: -2, y: -31}
         - {x: -2, y: -28}
@@ -150,10 +148,14 @@ TextureImporter:
         - {x: 28, y: -11}
         - {x: 28, y: 14}
         - {x: 17, y: 32}
-        - {x: -30, y: 32}
-        - {x: -32, y: 29}
-        - {x: -32, y: -23}
-        - {x: -17, y: -32}
+        - {x: -14, y: 32}
+        - {x: -19, y: 18}
+        - {x: -13, y: 5}
+        - {x: -10, y: 0}
+        - {x: -30, y: 2}
+        - {x: -32, y: 0}
+        - {x: -32, y: -14}
+        - {x: -11, y: -32}
         - {x: -3, y: -32}
         - {x: -2, y: -31}
         - {x: -2, y: -28}

@@ -30,7 +30,7 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -65,10 +65,12 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: 32}
-        - {x: -32, y: -32}
-        - {x: 32, y: -32}
-        - {x: 32, y: 32}
+      - - {x: -17, y: -32}
+        - {x: 24, y: -32}
+        - {x: 24, y: 23}
+        - {x: 22, y: 32}
+        - {x: -20, y: 32}
+        - {x: -20, y: -24}
     - name: cultist_03_1
       rect:
         serializedVersion: 2
@@ -80,10 +82,14 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: 32}
-        - {x: -32, y: -32}
-        - {x: 32, y: -32}
-        - {x: 32, y: 32}
+      - - {x: -13, y: 32}
+        - {x: -19, y: 30}
+        - {x: -20, y: 29}
+        - {x: -20, y: -32}
+        - {x: 17, y: -32}
+        - {x: 24, y: -17}
+        - {x: 24, y: 20}
+        - {x: 16, y: 32}
     - name: cultist_03_2
       rect:
         serializedVersion: 2
@@ -95,10 +101,17 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: 32}
-        - {x: -32, y: -32}
-        - {x: 32, y: -32}
-        - {x: 32, y: 32}
+      - - {x: 24, y: -5}
+        - {x: 24, y: 18}
+        - {x: 5, y: 32}
+        - {x: -13, y: 32}
+        - {x: -20, y: 28}
+        - {x: -20, y: -30}
+        - {x: -19, y: -32}
+        - {x: 12, y: -32}
+        - {x: 17, y: -29}
+        - {x: 20, y: -25}
+        - {x: 20, y: -21}
     - name: cultist_03_3
       rect:
         serializedVersion: 2
@@ -110,10 +123,14 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: 32}
-        - {x: -32, y: -32}
-        - {x: 32, y: -32}
-        - {x: 32, y: 32}
+      - - {x: -13, y: 32}
+        - {x: -19, y: 30}
+        - {x: -20, y: 29}
+        - {x: -20, y: -32}
+        - {x: 17, y: -32}
+        - {x: 24, y: -17}
+        - {x: 24, y: 20}
+        - {x: 16, y: 32}
     outline: []
   spritePackingTag: 
   userData: 
